@@ -12,7 +12,7 @@ function App() {
       <header className="hero">
         <div className="hero-content">
           <h1>迷信的復興：我們是和沒有血氣的惡靈爭戰</h1>
-          <p className="subtitle">一場幽默反諷的靈性探索之旅，從迷信到信仰，從黑暗到光明</p>
+          <p className="subtitle">一場幽默反諷的靈性探索之旅，從迷信到信仰，從黑暗到光明，張渝江著，2025/5</p>
           <a href="https://docs.google.com/document/d/1Pn33AiQQWErYrtrUvUzeO0ydhx987EtMDGY7HPl9e6w/edit?usp=sharing" className="cta-button">立即閱讀全書</a>
         </div>
         <div className="hero-image">
@@ -122,7 +122,7 @@ function App() {
       {/* Footer */}
       <footer>
         <div className="container">
-          <p>© 2025 迷信的復興：我們是和沒有血氣的惡靈爭戰</p>
+          <p>© 2025 迷信的復興：我們是和沒有血氣的惡靈爭戰，張渝江，all rights reserved.</p>
         </div>
       </footer>
     </div>
