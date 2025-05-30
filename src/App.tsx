@@ -5,6 +5,7 @@ import chapter8Image from './assets/images/chapter8_expanded_illustration.png';
 import chapter11Image from './assets/images/chapter11_expanded_illustration.png';
 import chapter12Image from './assets/images/chapter12_illustration.png';
 import { Routes, Route, Navigate, useLocation, Link } from 'react-router-dom';
+import { Analytics } from "@vercel/analytics/next";
 
 function App() {
   const location = useLocation();
@@ -152,6 +153,7 @@ function App() {
 
   return (
     <div className="App">
+      <Analytics />
       {/* Language Switch Links */}
       <div className="language-switch">
         <Link to="/zh" className={lang === 'zh' ? 'active' : ''}>中文</Link>
