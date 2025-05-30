@@ -5,7 +5,7 @@ import chapter8Image from './assets/images/chapter8_expanded_illustration.png';
 import chapter11Image from './assets/images/chapter11_expanded_illustration.png';
 import chapter12Image from './assets/images/chapter12_illustration.png';
 import { Routes, Route, Navigate, useLocation, Link } from 'react-router-dom';
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const location = useLocation();
