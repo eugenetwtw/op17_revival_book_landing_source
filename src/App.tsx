@@ -6,12 +6,22 @@ import chapter11Image from './assets/images/chapter11_expanded_illustration.png'
 import chapter12Image from './assets/images/chapter12_illustration.png';
 import { Routes, Route, Navigate, useLocation, Link } from 'react-router-dom';
 import { Analytics } from "@vercel/analytics/react";
+import { useEffect } from 'react';
 
 function App() {
   const location = useLocation();
   const isChinese = location.pathname.startsWith('/zh');
   const isEnglish = location.pathname.startsWith('/en');
   const lang = isChinese ? 'zh' : isEnglish ? 'en' : 'zh'; // Default to Chinese if no path specified
+
+  // Update Open Graph Protocol (OGP) meta tags based on language
+  useEffect(() => {
+    const currentContent = content[lang];
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', currentContent.hero.title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', currentContent.hero.subtitle.split('\n')[0]);
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', window.location.href);
+    document.querySelector('meta[property="og:locale"]')?.setAttribute('content', lang === 'zh' ? 'zh_TW' : 'en_US');
+  }, [lang]);
 
   // Content for Chinese and English
   const content = {
