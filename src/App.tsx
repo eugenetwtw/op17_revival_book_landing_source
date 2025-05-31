@@ -19,9 +19,10 @@ function App() {
     const currentContent = content[lang];
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', currentContent.hero.title);
     document.querySelector('meta[property="og:description"]')?.setAttribute('content', currentContent.hero.subtitle.split('\n')[0]);
-    document.querySelector('meta[property="og:url"]')?.setAttribute('content', window.location.href);
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', `${window.location.origin}${location.pathname}`);
     document.querySelector('meta[property="og:locale"]')?.setAttribute('content', lang === 'zh' ? 'zh_TW' : 'en_US');
-  }, [lang]);
+    document.querySelector('meta[property="og:image"]')?.setAttribute('content', `${window.location.origin}/assets/images/introduction_illustration.png`);
+  }, [lang, location.pathname]);
 
   // Content for Chinese and English
   const content = {
