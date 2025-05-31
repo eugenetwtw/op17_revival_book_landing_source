@@ -14,15 +14,6 @@ function App() {
   const isEnglish = location.pathname.startsWith('/en');
   const lang = isChinese ? 'zh' : isEnglish ? 'en' : 'zh'; // Default to Chinese if no path specified
 
-  // Update Open Graph Protocol (OGP) meta tags based on language
-  useEffect(() => {
-    const currentContent = content[lang];
-    document.querySelector('meta[property="og:title"]')?.setAttribute('content', currentContent.hero.title);
-    document.querySelector('meta[property="og:description"]')?.setAttribute('content', currentContent.hero.subtitle.split('\n')[0]);
-    document.querySelector('meta[property="og:url"]')?.setAttribute('content', `${window.location.origin}${location.pathname}`);
-    document.querySelector('meta[property="og:locale"]')?.setAttribute('content', lang === 'zh' ? 'zh_TW' : 'en_US');
-    document.querySelector('meta[property="og:image"]')?.setAttribute('content', `${window.location.origin}/assets/images/introduction_illustration.png`);
-  }, [lang, location.pathname]);
 
   // Content for Chinese and English
   const content = {
